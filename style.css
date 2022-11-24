@@ -1,0 +1,255 @@
+*,*::before,*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+--soft-orange: hsl(35, 77%, 62%);
+--soft-red: hsl(5, 85%, 63%);
+
+--off-white: hsl(36, 100%, 99%);
+--grayish-blue: hsl(233, 8%, 79%);
+--dark-grayish-blue: hsl(236, 13%, 42%);
+--very-dark-blue: hsl(240, 100%, 5%);
+
+--h-gap: 30px;
+}
+
+html {
+    font-family: Inter, sans-serif;
+}
+
+body {
+    background-color: var(--off-white);
+}
+
+header,
+main {
+    width: 90%;
+    max-width: 1110px;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5rem auto 3.5rem;
+}
+
+nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.hamburger {
+    display: none;
+}
+
+main {
+    margin: 0 auto;
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--h-gap);
+}
+
+.img-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.top-left-content {
+    /* display: flex;
+    justify-content: space-between; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-top: 2rem;
+
+}
+
+h1 {
+    font-size: 3.4rem;
+    font-weight: 900;
+    line-height: 1;
+
+}
+
+.top-left-p p {
+    color: var(--dark-grayish-blue);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.top-left-p a {
+    width: 55%;
+    margin-top: 2rem;
+    background-color: var(--soft-red);
+    color: var(--off-white);
+    font-weight: bold;
+    font-size: 0.95rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.top-left-p {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+
+}
+
+.top-right {
+    background-color: var(--very-dark-blue);
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+h2 {
+    color: var(--soft-orange);
+    font-size: 2.5rem;
+}
+
+.top-right-content {
+    display: flex;
+    flex-direction: column;
+}
+
+h2, .news-item {
+    margin-bottom: 1.8rem;
+}
+
+.news-item {
+    color: var(--off-white);
+    border-bottom: 1px solid var(--dark-grayish-blue);
+    padding-bottom: 1.9rem;
+}
+
+.news-item:last-of-type {
+    border: none;
+    padding: 0;
+    margin: 0.5rem;;
+}
+
+.news-item .bold {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+}
+
+.news-item p:last-of-type {
+    color: var(--grayish-blue);
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+}
+
+.bottom {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr; */
+    display: flex;
+    gap: calc(var(--h-gap) / 2);
+    margin: 4rem 0;
+}
+
+.bottom-item {
+    display: flex;
+    /* height: 8rem; */
+    gap: 25px;
+}
+
+.bottom-item img {
+    width: 25%;
+    object-fit: cover;
+}
+
+.bottom-item-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-item-contents p:nth-of-type(1) {
+    color: var(--grayish-blue);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.bottom-item-contents p:nth-of-type(2) {
+    color: var(--very-dark-blue);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.bottom-item-contents p:nth-of-type(3) {
+    color: var(--very-dark-blue);
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ******************
+* INTERACTION START *
+********************* */
+
+.top-left-p a:hover,
+.top-right-content .bold:hover,
+.bottom-item-contents p:nth-of-type(2):hover,
+nav > a:hover {
+    cursor: pointer;
+}
+
+.top-right-content .bold:hover,
+.bottom-item-contents p:nth-of-type(2):hover,
+nav > a:hover {
+    color: var(--soft-orange);
+}
+
+.top-left-p a:hover {
+    background-color: var(--very-dark-blue);
+}
+
+/* ******************
+* INTERACTION END   *
+********************* */
+
+@media screen and (max-width: 900px) {
+    header {
+        margin: 2rem auto 2rem;
+    }
+
+    header > img {
+        height: 2rem;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        width: 2.5rem;
+        height: 1.1rem;
+    }
+
+    .top,
+    .top-left-content,
+    .bottom {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-left-p p {
+        line-height: 1.7rem;
+    }
+
+    .top-right {
+        margin-top: 2rem;
+    }
+}
